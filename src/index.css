@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Source+Sans+3:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 30 15% 97%;
+    --foreground: 25 10% 15%;
+
+    --card: 30 20% 95%;
+    --card-foreground: 25 10% 15%;
+
+    --popover: 30 15% 97%;
+    --popover-foreground: 25 10% 15%;
+
+    --primary: 25 30% 28%;
+    --primary-foreground: 30 15% 97%;
+
+    --secondary: 30 12% 88%;
+    --secondary-foreground: 25 10% 15%;
+
+    --muted: 30 10% 92%;
+    --muted-foreground: 25 8% 45%;
+
+    --accent: 32 45% 42%;
+    --accent-foreground: 30 15% 97%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 30 15% 85%;
+    --input: 30 15% 85%;
+    --ring: 25 30% 28%;
+
+    --radius: 0.5rem;
+
+    --stone-warm: 30 20% 60%;
+    --stone-light: 35 25% 92%;
+    --stone-dark: 25 15% 22%;
+    --marble-vein: 32 30% 75%;
+    --granite-accent: 20 8% 40%;
+
+    --font-heading: 'Playfair Display', serif;
+    --font-body: 'Source Sans 3', sans-serif;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-body);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+  }
+}
+
+@layer utilities {
+  .text-gradient-stone {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(135deg, hsl(25 30% 28%), hsl(32 45% 42%));
+  }
+
+  .bg-stone-pattern {
+    background-image: 
+      linear-gradient(135deg, hsl(30 20% 95%) 0%, hsl(35 25% 92%) 50%, hsl(30 15% 90%) 100%);
+  }
+
+  .bg-hero-overlay {
+    background: linear-gradient(
+      to right,
+      hsl(25 15% 12% / 0.88) 0%,
+      hsl(25 15% 12% / 0.7) 50%,
+      hsl(25 15% 12% / 0.4) 100%
+    );
+  }
+
+  @media (max-width: 768px) {
+    .bg-hero-overlay {
+      background: linear-gradient(
+        to bottom,
+        hsl(25 15% 12% / 0.82) 0%,
+        hsl(25 15% 12% / 0.7) 100%
+      );
+    }
+  }
+
+  .shadow-stone {
+    box-shadow: 0 4px 20px -4px hsl(25 10% 15% / 0.12);
+  }
+
+  .border-marble {
+    border-color: hsl(30 15% 85%);
+  }
+}
